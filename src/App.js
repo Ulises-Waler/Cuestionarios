@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Card, } from "react-bootstrap";
 
-function App() {
+const App = () => {
+  const style = {
+    backgroundColor: 'lightblue',
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <center><div style={style}><Container className="mt-5">
+      <Card style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title>Cuestionarios</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Creacion de Cuestionarios dinámicos</Card.Subtitle>
+          <Card.Text>
+            Se requiere una plataforma que cree cuestionarios de manera dinámica. Que el usuario pueda crear preguntas y asignarle un tipo,si va a recibir datos númericos, de texto, opcionales, etc, etc...La plataforma también debe de guardar el dueño de dicho cuestionario y mostrar en gráfica la respuestas que reciba.
+          </Card.Text>
+          <Card.Link href="#">Brazilian Miku</Card.Link>
+          <Card.Link href="#">Yuta Okkotsu</Card.Link>
+        </Card.Body>
+      </Card>
+    </Container>
+    </div></center>
   );
 }
 
