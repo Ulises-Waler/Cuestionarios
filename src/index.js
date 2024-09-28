@@ -5,11 +5,25 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>
+  },
+  {
+    path: "/recover-password",
+    element: <RecoverPassword/>
+  },
+  {
+    path: "/home",
+    element: <Home/>
+  }
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <RouterProvider router={router}/>
+  
     <App />
   </React.StrictMode>
 );
