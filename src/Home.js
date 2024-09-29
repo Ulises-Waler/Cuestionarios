@@ -57,8 +57,51 @@ export const Home = () => {
                     <Card.Body>
                         <Card.Title>Lista de Usuarios</Card.Title>
                         <div className="text-end">
-                            <Button variant="success">Agregar Usuario</Button>
+                            <Button variant="success">Nuestros usuarios</Button>
                         </div>
+
+                        <Table>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                        </tr>
+
+                        <tr>
+                            <td>Ulises</td>
+                            <td>Escobar</td>
+                            <td>utm23090479@utma.edu.mx</td>
+                        </tr>
+
+                        <tr>
+                            <td>Angel</td>
+                            <td>Padilla</td>
+                            <td>utm23090741@utma.edu.mx</td>
+                        </tr>
+
+                        <tr>
+                            <td>Erik</td>
+                            <td>...</td>
+                            <td>utm2309....@utma.edu.mx</td>
+                        </tr>
+
+                        <tr>
+                            <td>Itzel</td>
+                            <td>Rivera</td>
+                            <td>utm23090687@utma.edu.mx</td>
+                        </tr>
+                    </Table>
+
+                 </Card.Body>
+                 </Card>
+            </Container>
+
+                <div/>
+
+            <Container>
+                <Card className="mt-3">
+                    <Card.Body>
+                        <Card.Title>Agregar nuevo usuario</Card.Title>
                         <Table>
                         <tr>
                             <th>Nombre</th>
@@ -70,9 +113,8 @@ export const Home = () => {
                             <td>{user.ap}</td>
                             <td>{user.correo}</td>
                         </tr>
-                    </Table>
-
-                    <h2>Agregar Nuevo Usuario</h2>
+                        </Table>
+                        
                     <input type="text" name="name" placeholder="Nombre" value={newUser.name} onChange={handleInputChange}/>
                     <input type="text" name="ap" placeholder="Apellido" value={newUser.ap} onChange={handleInputChange} />
                     <input type="correo" name="correo" placeholder="Correo" value={newUser.correo} onChange={handleInputChange}/>
