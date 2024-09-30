@@ -8,6 +8,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './Login';
+import RecoverPassword from './RecoverPassword';
+import Home from './Home';
+
 
 const router = createBrowserRouter([
   {
@@ -20,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/recover-password",
-    element: <Recover-password/>
+    element: <RecoverPassword/>
   },
   {
     path: "/home",
@@ -31,8 +35,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}/>
-  
-    <App />
   </React.StrictMode>
 );
 

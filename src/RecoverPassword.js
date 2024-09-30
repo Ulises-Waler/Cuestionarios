@@ -29,4 +29,5 @@ import { Card, Container, Form, Button } from "react-bootstrap";
     );
 };
 
+export default RecoverPassword;
 
