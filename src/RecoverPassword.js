@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react"
-import { Card, Container, Form, Button } from "react-bootstrap";
+import { Card, Container, Form, Button, Nav, Navbar } from "react-bootstrap";
 
 
  export const RecoverPassword = () => {
@@ -15,6 +15,25 @@ import { Card, Container, Form, Button } from "react-bootstrap";
       }
 
     return(
+        <>
+        <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="/home">Home</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/create-questionnaire">Crear Cuestionario</Nav.Link>
+            <Nav.Link href="/recover-password">Recuperar Contraseña</Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Buscar"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Buscar</Button>
+          </Form>
+        </Container>
+      </Navbar>
         <Container className="mt-4">
             <Card>
                 <Card.Body>
@@ -26,6 +45,7 @@ import { Card, Container, Form, Button } from "react-bootstrap";
                 </Card.Body>
             </Card>
         </Container>
+        </>
     );
 };
 

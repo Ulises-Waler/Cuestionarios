@@ -18,6 +18,8 @@ import { Card, Container, Form, Button, Nav, Navbar} from "react-bootstrap";
     }
   
   return (
+    <>
+    
     <Container>
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
@@ -43,11 +45,12 @@ import { Card, Container, Form, Button, Nav, Navbar} from "react-bootstrap";
                     <Form.Label>Contraseña</Form.Label>
                       <Form.Control onChange={onChangeregister} name="password" type="password" placeholder="Escriba su contraseña"/>
                   </Form.Group>
-                  <Button variant="primary" type="submit" onClick={()=>{onSubmit()}}>Ingresar</Button>
+                  <Button className="mt-3" variant="primary" type="submit" onClick={()=>{onSubmit()}}>Ingresar</Button>
                 </Form>
             </Card.Body>
         </Card>
     </Container>
+    </>
   );
 }
 

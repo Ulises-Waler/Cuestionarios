@@ -16,12 +16,9 @@ import Home from './Home';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>
-  },
-  {
-    path: "/login",
     element: <Login/>
   },
+  
   {
     path: "/recover-password",
     element: <RecoverPassword/>

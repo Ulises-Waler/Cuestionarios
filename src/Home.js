@@ -35,7 +35,6 @@ export const Home = () => {
         <Container>
           <Navbar.Brand href="/home">Home</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/create-questionnaire">Crear Cuestionario</Nav.Link>
             <Nav.Link href="/recover-password">Recuperar Contraseña</Nav.Link>
           </Nav>
