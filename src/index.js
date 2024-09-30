@@ -26,14 +26,6 @@ const router = createBrowserRouter([
     path: "/home",
     element: <Home/>
   },
-  {
-    path: "/recover-password",
-    element: <RecoverPassword/>
-  },
-  {
-    path: "/home",
-    element: <Home/>
-  }
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
