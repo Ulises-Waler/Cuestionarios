@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
 import RecoverPassword from './RecoverPassword';
 import Home from './Home';
+import { Registro } from './Registro';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home/>
+  },
+  {
+    path: "/register",
+    element: <Registro/>
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -139,7 +139,7 @@ export const Home = () => {
                                 className="mt-2"
                             />
                         </Card>
-                        <div className="text-end">
+                        <div className="text-end" >
                             <Button  className="mt-3" variant="success" onClick={handleAddUser}>Agregar Usuario</Button>
                         </div>
                     </Card.Body>
