@@ -1,6 +1,8 @@
 import React from "react";
-import { Button, Card, Container, Nav, Table, Form, Navbar } from "react-bootstrap";
+import { Button, Card, Container, Table} from "react-bootstrap";
 import { useState } from "react";
+import Header from "./Header";
+
 
 
 export const Home = () => {
@@ -31,24 +33,7 @@ export const Home = () => {
 
     return (
         <>
-            <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="/home">Home</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/create-questionnaire">Crear Cuestionario</Nav.Link>
-            <Nav.Link href="/recover-password">Recuperar Contraseña</Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
-        </Container>
-      </Navbar>
+            <Header></Header>
 
             <Container>
                 <Card className="mt-3">
