@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card, Container, Form, Row, Col, OverlayTrigger, Tooltip, CloseButton } from "react-bootstrap";
-import Header from "./Header";
 
-export const CreateQuestionnaire = () => {
+const CreateQuestionnaire = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [questions, setQuestions] = useState([
@@ -64,8 +63,6 @@ export const CreateQuestionnaire = () => {
     };
     return (
         <>
-<Header></Header>
-
       <Container>
                 <Card  style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3"                                 
                 >
