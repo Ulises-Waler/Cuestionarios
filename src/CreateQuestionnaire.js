@@ -63,9 +63,41 @@ const CreateQuestionnaire = () => {
     };
 
     return (
-      <>
-      </>
-    )
-  
-  }
-  export default CreateQuestionnaire;
+        <>
+      <Container>
+                <Card  style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3"                                 
+                >
+                    <Card.Body>
+                        <Card.Title>{title || "Crear Cuestionario"}</Card.Title>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Título del Cuestionario</Form.Label>
+                            <Form.Control
+                                style={{ border: '1px solid' }}
+
+                                type="text"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                                placeholder="Ingrese el título"
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Descripción</Form.Label>
+                            <Form.Control
+                                style={{ border: '1px solid ' }}
+
+                                as="textarea"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder="Ingrese la descripción"
+                            />
+                        </Form.Group>
+                    </Card.Body>
+                </Card>
+
+            
+};
+
+
+                
+ 
