@@ -22,7 +22,7 @@ export const Login = () => {
   return (
     <>
       <Container>
-        <Card className="mt-3">
+        <Card style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3">
           <Card.Body>
             <Card.Title>Inicio de Sesión</Card.Title>
             <Form>
@@ -37,7 +37,9 @@ export const Login = () => {
               <Button className="mt-3" variant="primary" type="submit" onClick={() => navigate("/home")}>Ingresar</Button>
               <Button className="mt-3 ms-2" variant="secondary"onClick={() => navigate("/register")}>Registrar</Button>
             </Form>
+            <div className="mt-3"> 
             <Card.Link href="/recover-password">¿Olvidaste tu Contraseña?</Card.Link>
+            </div>
           </Card.Body>
         </Card>
       </Container>

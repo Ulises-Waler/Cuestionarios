@@ -36,7 +36,7 @@ export const Home = () => {
             <Header></Header>
 
             <Container>
-                <Card className="mt-3">
+                <Card style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3">
                     <Card.Body>
                         <Card.Title>Lista de Usuarios</Card.Title>
                         <Table striped bordered hover variant="dark" className="mt-4">
@@ -88,7 +88,7 @@ export const Home = () => {
             </Container>
 
             <Container>
-                <Card className="mt-3">
+                <Card style={{boxShadow:'0 4px 8px rgba(0, 255, 255, 0.8)'}} className="mt-3 mb-4">
                     <Card.Body>
                         <Card.Title>Agregar Usuario</Card.Title>
                         <Table>

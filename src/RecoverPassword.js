@@ -19,7 +19,7 @@ import Header from "./Header";
         <>
         <Header></Header>
         <Container className="mt-4">
-            <Card>
+            <Card style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}}>
                 <Card.Body>
                     <Card.Title>Recuperar Contraseña</Card.Title>
                     <Form.Control className="mt-3" type="email" name ="email" placeholder="Ingresa tu correo" onChange={onChange}></Form.Control>
