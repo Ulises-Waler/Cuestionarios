@@ -61,7 +61,6 @@ const CreateQuestionnaire = () => {
         }
         setQuestions(updatedQuestions);
     };
-
     return (
         <>
       <Container>
@@ -94,10 +93,122 @@ const CreateQuestionnaire = () => {
                         </Form.Group>
                     </Card.Body>
                 </Card>
+                {questions.map((question, index) => (
+                    <Card className="mt-3" key={index} style={{boxShadow:'0 4px 8px rgba(0, 255, 255, 0.8)'}}>
+                        <Card.Body>
+                            <div className="text-end">
+                                {index > 0 && (
+                                    <OverlayTrigger
+                                        placement="top"
+                                        overlay={<Tooltip>Eliminar pregunta</Tooltip>}
+                                    >
+                                        <CloseButton
+                                            variant="outline"
+                                            onClick={() => removeQuestion(index)}
+                                            className="mt-2"
+                                            style={{ color: "black" }}
+                                        >
+                                        </CloseButton>
+                                    </OverlayTrigger>
+                                )}
+                            </div>
 
-            
+                            <Row>
+                                <Col>
+                                    <Form.Group>
+                                        <Form.Label>Título de la Pregunta</Form.Label>
+                                        <Form.Control
+                                            style={{ border: '1px solid ' }}
+                                            type="text"
+                                            value={question.title}
+                                            onChange={(e) =>
+                                                handleQuestionChange(index, "title", e.target.value)
+                                            }
+                                            placeholder="Ingrese la pregunta"
+                                        />
+                                    </Form.Group>
+                                </Col>
+                                <Col>
+                                    <Form.Group>
+                                        <Form.Label>Tipo de Pregunta</Form.Label>
+                                        <Form.Select
+                                            style={{ border: '1px solid' }}
+
+                                            value={question.type}
+                                            onChange={(e) => handleQuestionTypeChange(index, e.target.value)}
+                                        >
+                                            <option value="text">Texto</option>
+                                            <option value="multiple">Selección Múltiple</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
+                            {question.type === "multiple" && (
+                                <>
+                                    <h5 className="mt-3">Opciones</h5>
+                                    {question.options.map((option, optIndex) => (
+                                        <div key={optIndex} className="d-flex align-items-center">
+                                            <Form.Control
+                                                style={{ border: '1px solid ' }}
+
+                                                type="text"
+                                                value={option}
+                                                onChange={(e) =>
+                                                    handleOptionChange(index, optIndex, e.target.value)
+                                                }
+                                                placeholder={Opción ${optIndex + 1}}
+                                                className="me-2 mt-2"
+                                            />
+                                            {question.options.length > 1 && (
+                                                <OverlayTrigger
+                                                    overlay={<Tooltip>Eliminar opción</Tooltip>}
+                                                >
+                                                    <Button
+                                                        variant="outline-danger"
+                                                        onClick={() => removeOption(index, optIndex)}
+                                                    >
+                                                        X
+                                                    </Button>
+                                                </OverlayTrigger>
+                                            )}
+                                        </div>
+                                    ))}
+                                    <Button
+                                        variant="secondary"
+                                        className="mt-2"
+                                        onClick={() => addOption(index)}
+                                    >
+                                        Agregar Opción
+                                    </Button>
+                                </>
+                            )}
+
+                            <Form.Check
+                            
+                                type="checkbox"
+                                label="Pregunta obligatoria"
+                                checked={question.required}
+                                onChange={(e) =>
+                                    handleQuestionChange(index, "required", e.target.checked)
+                                }
+                                className="mt-3"    
+                            />
+                        </Card.Body>
+                    </Card>
+                ))}
+
+                <div className="d-flex justify-content-between mt-3">
+                    <Button variant="primary" onClick={addQuestion}>
+                        Agregar Pregunta
+                    </Button>
+                    <Button variant="success" onClick={handleSubmit}>
+                        Crear Cuestionario
+                    </Button>
+                </div>
+            </Container>
+        </>
+    );
 };
 
-
-                
- 
+export default CreateQuestionnaire;
