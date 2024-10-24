@@ -12,7 +12,7 @@ import Login from './Login';
 import RecoverPassword from './RecoverPassword';
 import Home from './Home';
 import { Registro } from './Registro';
-import Cuestionario from './CrearCuestionario';
+import CreateQuestionnaire from './CreateQuestionnaire';
 
 
 const router = createBrowserRouter([
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/create-questionnaire",
-    element: <Cuestionario/>
+    element: <CreateQuestionnaire/>
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
