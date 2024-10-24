@@ -37,6 +37,7 @@ export const Login = () => {
               <Button className="mt-3" variant="primary" type="submit" onClick={() => navigate("/home")}>Ingresar</Button>
               <Button className="mt-3 ms-2" variant="secondary"onClick={() => navigate("/register")}>Registrar</Button>
             </Form>
+            <Card.Link href="/recover-password">¿Olvidaste tu Contraseña?</Card.Link>
           </Card.Body>
         </Card>
       </Container>

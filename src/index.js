@@ -12,7 +12,11 @@ import Login from './Login';
 import RecoverPassword from './RecoverPassword';
 import Home from './Home';
 import { Registro } from './Registro';
+<<<<<<< HEAD
 import CreateQuestionnaire from './Createquestionnaire';
+=======
+import CreateQuestionnaire from './CreateQuestionnaire';
+>>>>>>> 3f427214e4986437b18466fc7010b8f49d1ed189
 
 
 const router = createBrowserRouter([
