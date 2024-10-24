@@ -157,7 +157,7 @@ const CreateQuestionnaire = () => {
                                                 onChange={(e) =>
                                                     handleOptionChange(index, optIndex, e.target.value)
                                                 }
-                                                placeholder={Opción ${optIndex + 1}}
+                                                placeholder={`Opción ${optIndex + 1}`}
                                                 className="me-2 mt-2"
                                             />
                                             {question.options.length > 1 && (
