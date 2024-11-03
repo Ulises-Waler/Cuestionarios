@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card, Container, Form, Row, Col, OverlayTrigger, Tooltip, CloseButton } from "react-bootstrap";
-
+import Header from "./Header";
 const CreateQuestionnaire = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -37,7 +37,7 @@ const CreateQuestionnaire = () => {
 
     const removeOption = (index, optionIndex) => {
         const updatedQuestions = [...questions];
-        updatedQuestions[index].options = updatedQuestions[index].options.filter((_, optIdx) => optIdx !== optionIndex); // Filtra la opción a eliminar
+        updatedQuestions[index].options = updatedQuestions[index].options.filter((_, optIdx) => optIdx !== optionIndex); 
         setQuestions(updatedQuestions);
     };
 
@@ -63,6 +63,8 @@ const CreateQuestionnaire = () => {
     };
     return (
         <>
+
+       <Header></Header> 
       <Container>
                 <Card  style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3"                                 
                 >
@@ -198,7 +200,7 @@ const CreateQuestionnaire = () => {
                     </Card>
                 ))}
 
-                <div className="d-flex justify-content-between mt-3">
+                <div className="d-flex justify-content-between mt-3 mb-3">
                     <Button variant="primary" onClick={addQuestion}>
                         Agregar Pregunta
                     </Button>
