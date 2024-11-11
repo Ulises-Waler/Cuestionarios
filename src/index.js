@@ -13,8 +13,8 @@ import RecoverPassword from './RecoverPassword';
 import Home from './Home';
 import { Registro } from './Registro';
 import CreateQuestionnaire from './CreateQuestionnaire.js';
+import UseComponent from './ComponentUse.js';
 import { AnswerQuestionnaire } from './Components/AnswerQuestionnaire.js';
-
 
 
 const router = createBrowserRouter([
@@ -38,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/create-questionnaire",
     element: <CreateQuestionnaire/>
+  },
+  {
+    path: "/grafica",
+    element: <UseComponent/>
   },
   {
     path: "/questionnaire",
