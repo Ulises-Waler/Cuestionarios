@@ -1,14 +1,28 @@
-import React from "react";
-import { Button, Card, Container, Table} from "react-bootstrap";
-import { useState } from "react";
-import Header from "./Header";
+import React, { useEffect, useState } from "react";
+import { Button, Card, Col, Container, Row, Table } from "react-bootstrap";
+import { Pencil, Trash } from "react-bootstrap-icons";
+
+export const ListUsers = () => {
+
+const [users, setUsers] = useState([])
+
+useEffect(() => {
+  getUser();
+}, [])
 
 
+    const getUser = () => {
+        const users = [
+        { name: 'Angel', ap: 'Padilla', correo: 'utm23090741@utma.edu.mx' },
+        { name: 'Itzel', ap: 'Rivera', correo: 'utm23090687@utma.edu.mx' },
+        { name: 'Erik', ap: 'Barba', correo: 'utm23090777@utma.edu.mx' },
+        { name: 'Ulises', ap: 'Okkotsu', correo: 'utm23090479@utma.edu.mx' }
 
-export const Home = () => {
-    const [datos, setData] = useState({});
+    ];
+    setUsers(users)
+}
+
     const [newUser, setNewUser] = useState({ name: '', ap: '', correo: '' });
-    const [users, setUsers] = useState([]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -20,22 +34,10 @@ export const Home = () => {
         setNewUser({ name: '', ap: '', correo: '' });
     };
 
-    const Takeit = (e) => {
-        e.preventDefault();
-        let nData = datos;
-        nData[e.target.name] = e.target.value;
-        setData(nData);
-    };
-
-    const onSubmit = () => {
-        console.log(datos);
-    };
-
     return (
         <>
-
             <Container>
-                <Card style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3">
+                <Card style={{ boxShadow: '0 4px 8px rgba(128,0,128,0.6)' }} className="mt-3">
                     <Card.Body>
                         <Card.Title>Lista de Usuarios</Card.Title>
                         <Table striped bordered hover variant="dark" className="mt-4">
@@ -45,39 +47,30 @@ export const Home = () => {
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Correo</th>
+                                    <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Angel</td>
-                                    <td>Padilla</td>
-                                    <td>utm23090741@utma.edu.mx</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Itzel</td>
-                                    <td>Rivera</td>
-                                    <td>utm23090687@utma.edu.mx</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Erik</td>
-                                    <td>Barba</td>
-                                    <td>utm23090777@utma.edu.mx</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Ulises</td>
-                                    <td>Okkotsu</td>
-                                    <td>utm23090479@utma.edu.mx</td>
-                                </tr>
-                                {users.map((user, index) => (
+                                {users?.map((user, index) => (
                                     <tr key={index}>
-                                        <td>{index+5}</td>
+                                        <td>{index + 1}</td>
                                         <td>{user.name}</td>
                                         <td>{user.ap}</td>
                                         <td>{user.correo}</td>
+                                        <td>
+                                            <Row className="text-center">
+                                                <Col>
+                                                    <Button>
+                                                        <Pencil />
+                                                    </Button>
+                                                </Col>
+                                                <Col>
+                                                    <Button variant="danger">
+                                                        <Trash />
+                                                    </Button>
+                                                </Col>
+                                            </Row>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -87,17 +80,11 @@ export const Home = () => {
             </Container>
 
             <Container>
-                <Card style={{boxShadow:'0 4px 8px rgba(0, 255, 255, 0.8)'}} className="mt-3 mb-4">
+                <Card style={{ boxShadow: '0 4px 8px rgba(0, 255, 255, 0.8)' }} className="mt-3 mb-4">
                     <Card.Body>
                         <Card.Title>Agregar Usuario</Card.Title>
-                        <Table>
-                            <tbody>
-
-                            </tbody>
-                        </Table>
                         <h2>Agregar Nuevo Usuario</h2>
                         <Card className="mt-3">
-
                             <input
                                 type="text"
                                 name="name"
@@ -114,7 +101,7 @@ export const Home = () => {
                                 onChange={handleInputChange}
                                 className="mt-2"
                             />
-                            <input  
+                            <input
                                 type="email"
                                 name="correo"
                                 placeholder="Correo"
@@ -123,8 +110,8 @@ export const Home = () => {
                                 className="mt-2"
                             />
                         </Card>
-                        <div className="text-end" >
-                            <Button  className="mt-3" variant="success" onClick={handleAddUser}>Agregar Usuario</Button>
+                        <div className="text-end">
+                            <Button className="mt-3" variant="success" onClick={handleAddUser}>Agregar Usuario</Button>
                         </div>
                     </Card.Body>
                 </Card>
@@ -133,4 +120,4 @@ export const Home = () => {
     );
 };
 
-export default Home;
+export default ListUsers;

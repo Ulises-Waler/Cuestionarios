@@ -10,12 +10,13 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
 import RecoverPassword from './RecoverPassword';
-import Home from './ListUsers.js';
+import {ListUsers} from './ListUsers.js';
 import { Registro } from './Registro';
 import CreateQuestionnaire from './CreateQuestionnaire.js';
 import UseComponent from './ComponentUse.js';
 import { AnswerQuestionnaire } from './Components/AnswerQuestionnaire.js';
 import { Dashboard } from './Dashboard.js';
+import { ShowQuestionnaires } from './ShowQuestionnaires.js';
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
     element: <Registro/>
   },
   {
-    path: "/create-questionnaire",
+    path: "/create-questionnaire/:id",
     element: <CreateQuestionnaire/>
   },
   {
@@ -50,7 +51,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/list-users",
-    element: <Home/>
+    element: <ListUsers/>
+  },
+  {
+    path: "/list-q",
+    element: <ShowQuestionnaires/>
   },
 ]);
 

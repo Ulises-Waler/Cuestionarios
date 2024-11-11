@@ -13,6 +13,7 @@ export const Header=()=>{
                     <Navbar.Brand href="/home">Home</Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link href="/list-users">Lista de Usuarios</Nav.Link>
+                            <Nav.Link href="/list-q">Lista de Cuestionarios</Nav.Link>
                             <Nav.Link href="/grafica">Respuestas Graficadas</Nav.Link>
                             <Nav.Link href="/recover-password">Recuperar Contraseña</Nav.Link>
                             <Nav.Link href="/">Log out</Nav.Link>
@@ -35,7 +36,7 @@ export const Header=()=>{
                         <Container>
                         <Navbar.Brand href="/list-q">Home</Navbar.Brand>
                         <Nav className="me-auto">
-                            <Nav.Link href="/create-questionnaire">Crear Cuestionario</Nav.Link>
+                            <Nav.Link href="/create-questionnaire/:id">Crear Cuestionario</Nav.Link>
                             <Nav.Link href="/grafica">Respuestas Graficadas</Nav.Link>
                             <Nav.Link href="/recover-password">Recuperar Contraseña</Nav.Link>
                             <Nav.Link href="/">Log out</Nav.Link>
