@@ -5,16 +5,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
-import App from './App';
+import Header from './Header.js';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
 import RecoverPassword from './RecoverPassword';
-import Home from './Home';
+import Home from './ListUsers.js';
 import { Registro } from './Registro';
 import CreateQuestionnaire from './CreateQuestionnaire.js';
 import UseComponent from './ComponentUse.js';
 import { AnswerQuestionnaire } from './Components/AnswerQuestionnaire.js';
+import { Dashboard } from './Dashboard.js';
 
 
 const router = createBrowserRouter([
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <Home/>
+    element: <Dashboard/>
   },
   {
     path: "/register",
@@ -47,11 +48,29 @@ const router = createBrowserRouter([
     path: "/questionnaire",
     element: <AnswerQuestionnaire/>
   },
+  {
+    path: "/list-users",
+    element: <Home/>
+  },
 ]);
+
+const user ={
+  name:"Ulises",
+  logined:true,
+  rol:"Client"
+};
+localStorage.user = JSON.stringify(user);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
+  <React.StrictMode> <>
+  {
+    user?.logined == true && (
+        <Header/>
+    )
+  }
+  <RouterProvider router={router} />
+  </>
   </React.StrictMode>
 );
 

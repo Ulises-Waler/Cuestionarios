@@ -17,7 +17,6 @@ import Header from "./Header";
 
     return(
         <>
-        <Header></Header>
         <Container className="mt-4">
             <Card style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}}>
                 <Card.Body>

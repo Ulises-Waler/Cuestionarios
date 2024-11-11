@@ -1,5 +1,7 @@
 import React from 'react';
-import QuestionnaireChart from './QuestionnaireChart'; 
+import QuestionnaireChart from './QuestionnaireChart';
+import { Card, Container } from 'react-bootstrap';
+import Header from './Header';
 
 const UseComponent = () => {
     const questionnaire = {
@@ -12,16 +14,22 @@ const UseComponent = () => {
     };
 
     const responses = [
-        ["Sí", "Sí", "Excelente"], 
-        ["No", "Tal vez", ""],      
-        ["Sí", "Sí", "Muy buen servicio"], 
+        ["Sí", "Sí", "Excelente"],
+        ["No", "Tal vez", ""],
+        ["Sí", "Sí", "Muy buen servicio"],
     ];
 
     return (
-        <div>
-            <h1>Resultados de la Encuesta</h1>
-            <QuestionnaireChart questionnaire={questionnaire} responses={responses} />
-        </div>
+        <>
+            <Container>
+                <Card className='mt-3 mb-3' style={{ boxShadow: '0 4px 8px rgba(128,0,128,0.6)' }}>
+                    <Card.Body>
+                        <Card.Title>Resultados de la Encuesta</Card.Title>
+                        <QuestionnaireChart questionnaire={questionnaire} responses={responses} />
+                    </Card.Body>
+                </Card>
+            </Container>
+        </>
     );
 };
 

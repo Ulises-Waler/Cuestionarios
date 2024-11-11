@@ -33,7 +33,6 @@ export const Home = () => {
 
     return (
         <>
-            <Header></Header>
 
             <Container>
                 <Card style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3">
@@ -115,7 +114,7 @@ export const Home = () => {
                                 onChange={handleInputChange}
                                 className="mt-2"
                             />
-                            <input
+                            <input  
                                 type="email"
                                 name="correo"
                                 placeholder="Correo"
