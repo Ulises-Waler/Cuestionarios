@@ -13,6 +13,8 @@ import RecoverPassword from './RecoverPassword';
 import Home from './Home';
 import { Registro } from './Registro';
 import CreateQuestionnaire from './CreateQuestionnaire.js';
+import { AnswerQuestionnaire } from './Components/AnswerQuestionnaire.js';
+
 
 
 const router = createBrowserRouter([
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/create-questionnaire",
     element: <CreateQuestionnaire/>
+  },
+  {
+    path: "/questionnaire",
+    element: <AnswerQuestionnaire/>
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
