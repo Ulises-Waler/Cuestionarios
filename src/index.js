@@ -12,7 +12,7 @@ import Login from './Login';
 import RecoverPassword from './RecoverPassword';
 import {ListUsers} from './ListUsers.js';
 import { Registro } from './Registro';
-import CreateQuestionnaire from './CreateQuestionnaire.js';
+import CreateQuestionnaire from './Createquestionnaire';
 import UseComponent from './ComponentUse.js';
 import { AnswerQuestionnaire } from './Components/AnswerQuestionnaire.js';
 import { Dashboard } from './Dashboard.js';

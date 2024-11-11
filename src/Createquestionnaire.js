@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card, Container, Form, Row, Col, OverlayTrigger, Tooltip, CloseButton } from "react-bootstrap";
 
-const CreateQuestionnaire = () => {
+export const CreateQuestionnaire = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [questions, setQuestions] = useState([
