@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card, Container, Form, Row, Col, OverlayTrigger, Tooltip, CloseButton } from "react-bootstrap";
+import './'
 
 const CreateQuestionnaire = () => {
     const [title, setTitle] = useState("");
@@ -64,7 +65,7 @@ const CreateQuestionnaire = () => {
     return (
         <>
       <Container>
-                <Card  style={{boxShadow:'0 4px 8px rgba(128,0,128,0.6)'}} className="mt-3"                                 
+                <Card   className="mt-3 boxadown"                                 
                 >
                     <Card.Body>
                         <Card.Title>{title || "Crear Cuestionario"}</Card.Title>
